@@ -66,8 +66,12 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Calendars\ReserveSettings', 'reserve_setting_users', 'user_id', 'reserve_setting_id')->withPivot('id');
     }
 
+    // user to role belongsToMany("モデル", "相手のテーブル", "自分の外部キー", "相手の外部キー")
     public function subjects(){
-        return ;// リレーションの定義
+        // -- 20240713 tks add >>
+        return $this->belongsToMany('App\Models\Users\Subjects', 'subject_users', 'user_id', 'subject_id')->withPivot('id');
+        // 20230713 tks add <<
+        // リレーションの定義
     }
 
     // いいねしているかどうか

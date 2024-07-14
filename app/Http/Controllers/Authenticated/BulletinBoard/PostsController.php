@@ -73,6 +73,13 @@ class PostsController extends Controller
         MainCategory::create(['main_category' => $request->main_category_name]);
         return redirect()->route('post.input');
     }
+    // 20240713 tks add >>
+    public function subCategoryCreate(Request $request){
+        dd($request);
+        SubCategory::create(['sub_category' => $request->sub_category_name]);
+        return redirect()->route('post.input');
+    }
+    // 20240713 tks add <<
 
     public function commentCreate(Request $request){
         PostComment::create([
