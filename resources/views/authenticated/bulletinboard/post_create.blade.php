@@ -41,26 +41,26 @@
                         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="mainCategoryRequest">
                     </div>
                     <!-- サブカテゴリー追加 -->
-                    {{-- 20240713 tks add >> --}}
+                    {{-- 20240713 add >> --}}
                     <div class="">
                         <p class="m-0">サブ</p>
                         <select class="w-100" form="subCategoryRequest" name="main_category_id">
                             @foreach ($main_categories as $main_category)
-                                <option value="{{ $main_category->main_category }}"
-                                    @if (old('main_category') == $main_category->main_category) selected @endif>{{ $main_category->main_category }}
+                                <option value="{{ $main_category->id }}" @if (old('main_category') == $main_category->main_category) selected @endif>
+                                    {{ $main_category->main_category }}
                                 </option>
                             @endforeach
                         </select>
                         <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest">
                         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
                     </div>
-                    {{-- 20230713 tks add << --}}
+                    {{-- 20230713 add << --}}
                     <form action="{{ route('main.category.create') }}" method="post" id="mainCategoryRequest">
                         {{ csrf_field() }}</form>
-                    {{-- 20240713 tks add >> --}}
+                    {{-- 20240713 add >> --}}
                     <form action="{{ route('sub.category.create') }}" method="post" id="subCategoryRequest">
                         {{ csrf_field() }}</form>
-                    {{-- 20230713 tks add << --}}
+                    {{-- 20230713 add << --}}
                 </div>
             </div>
         @endcan

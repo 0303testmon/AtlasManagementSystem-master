@@ -24,9 +24,9 @@ class Post extends Model
     }
 
     public function subCategories(){
-        // 20240713 tks add >>
+        // 20240713 add >>
         return $this->hasMany('App\Models\Categories\SubCategory');
-        // 20240713 tks add <<
+        // 20240713 add <<
     }
 
     // コメント数

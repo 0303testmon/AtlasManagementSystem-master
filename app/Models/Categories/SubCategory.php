@@ -14,15 +14,15 @@ class SubCategory extends Model
     ];
     public function mainCategory(){
         // リレーションの定義
-        // 20240713 tks add >>
+        // 20240713 add >>
         return $this->belongsTo('App\Models\Categories\MainCategory');
-        // 20240713 tks add <<
+        // 20240713 add <<
     }
 
     public function posts(){
         // リレーションの定義
-        // 20240713 tks add >>
+        // 20240713 add >>
         return $this->hasMany('App\Models\Posts\Post');
-        // 20240713 tks add <<
+        // 20240713 add <<
     }
 }

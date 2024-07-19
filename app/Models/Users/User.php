@@ -68,9 +68,9 @@ class User extends Authenticatable
 
     // user to role belongsToMany("モデル", "相手のテーブル", "自分の外部キー", "相手の外部キー")
     public function subjects(){
-        // -- 20240713 tks add >>
+        // -- 20240713 add >>
         return $this->belongsToMany('App\Models\Users\Subjects', 'subject_users', 'user_id', 'subject_id')->withPivot('id');
-        // 20230713 tks add <<
+        // 20230713 add <<
         // リレーションの定義
     }
 
