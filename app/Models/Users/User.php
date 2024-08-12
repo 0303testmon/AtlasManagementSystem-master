@@ -82,4 +82,11 @@ class User extends Authenticatable
     public function likePostId(){
         return Like::where('like_user_id', Auth::id());
     }
+
+    // 0812 add 選択科目表示
+        public function subject(){
+        // return $this->hasMany('App\Models\Users\Subjects');
+        return $this->belongsToMany('App\Models\Users\Subjects')->withPivot('id');
+    // 0812 add
+    }
 }

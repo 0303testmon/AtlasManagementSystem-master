@@ -6,12 +6,15 @@
             <div class="">
                 <p class="mb-0">カテゴリー</p>
                 <select class="w-100" form="postCreate" name="post_category_id">
+                    {{-- コントローラから渡された$main_categories配列から$main_categoryを取り出す --}}
                     @foreach ($main_categories as $main_category)
                         <optgroup label="{{ $main_category->main_category }}"></optgroup>
                         <!-- サブカテゴリー表示 -->
+                        {{-- メインカテゴリからリレーションで紐づいてるサブカテゴリを取り出す --}}
                         {{-- 0811 add --}}
-                        @foreach ($sub_categories as $sub_category)
-                            <option value={{ $sub_category->id }}>{{ 'sub_category' }}</option>
+                        @foreach ($main_category->subCategories as $sub_category)
+                            {{-- サブカテゴリから id と カテゴリ名称を取り出す --}}
+                            <option value={{ $sub_category->id }}>{{ $sub_category->sub_category }}</option>
                         @endforeach
                         {{-- 0811 add --}}
                         </optgroup>
