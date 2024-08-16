@@ -48,8 +48,9 @@
                             <span>選択科目 :</span>
                             {{-- 0812 add --}}
                             {{-- @foreach ($subjects as $subject) --}}
-                            {{-- userからリレーションで紐づいてるuser_categoryを取り出す --}}
-                            @foreach ($user->subject as $subject)
+                            {{-- subjectからリレーションで紐づいてる選択科目を取り出す --}}
+                            @foreach ($subjects as $subject)
+                                {{-- {{ dd($subject) }}; --}}
                                 {{-- subjectから id と 選択科目名称を取り出す --}}
                                 <option value={{ $subject->id }}>{{ $subject->subject }}</option>
                             @endforeach
@@ -109,9 +110,9 @@
                         <div class="selected_engineer">
                             <label>選択科目</label>
                             {{-- 0812 add --}}
-                            <option value="1">国語</option>
+                            {{-- <option value="1">国語</option>
                             <option value="2">数学</option>
-                            <option value="3">英語</option>
+                            <option value="3">英語</option> --}}
                             {{-- 0812 add --}}
                         </div>
                     </div>

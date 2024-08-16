@@ -87,6 +87,7 @@ class User extends Authenticatable
         public function subject(){
         // return $this->hasMany('App\Models\Users\Subjects');
         return $this->belongsToMany('App\Models\Users\Subjects')->withPivot('id');
+        // return $this->belongsToMany('App\Models\Users\Subjects')->withPivot('id');
     // 0812 add
     }
 }
