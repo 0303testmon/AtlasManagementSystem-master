@@ -45,26 +45,17 @@
                     </div>
                     <div>
                         @if ($user->role == 4)
-                            <span>選択科目 :</span>
-                            {{-- 0812 add --}}
-                            {{-- @foreach ($subjects as $subject) --}}
-                            {{-- subjectからリレーションで紐づいてる選択科目を取り出す --}}
-                            @foreach ($subjects as $subject)
-                                {{-- {{ dd($subject) }}; --}}
-                                {{-- subjectから id と 選択科目名称を取り出す --}}
-                                <option value={{ $subject->id }}>{{ $subject->subject }}</option>
-                            @endforeach
-                            {{-- <span>{{ $subject->user->name }}</span> --}}
-                            {{-- @if ($subject->id == 1)
-                                    <span>国語</span>
-                                @elseif($subject->id == 2)
-                                    <span>数学</span>
-                                @elseif($subject->id == 3)
-                                    <span>英語</span>
-                                @endif --}}
-                            {{-- @endforeach --}}
-                            {{-- 0812 add --}}
+                            <span>選択科目 :
+                                {{-- 0812 add --}}
+                                {{-- ユーザーと選択科目のリレーション --}}
+                                @foreach ($user->subjects as $subject)
+                                    {{-- {{ dd($subject) }}; --}}
+                                    {{-- subjectから id と 選択科目名称を取り出す --}}
+                                    <span value={{ $subject->id }}>{{ $subject->subject }}</span>
+                                @endforeach
+                                {{-- 0812 add --}}
                         @endif
+                        </span>
                     </div>
                 </div>
             @endforeach
