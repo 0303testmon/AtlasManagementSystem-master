@@ -98,13 +98,23 @@
                                 <option value="4" class="">生徒</option>
                             </select>
                         </div>
-                        <div class="selected_engineer">
+                        <div type='checkbox' class="selected_engineer">
                             <label>選択科目</label>
-                            {{-- 0812 add --}}
+                            <div>
+                                <input type="checkbox" name="subject" value="1" />
+                                <label>国語</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="subject" value="2" />
+                                <label>数学</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="subject" value="3" />
+                                <label>英語</label>
+                            </div>
                             {{-- <option value="1">国語</option>
                             <option value="2">数学</option>
                             <option value="3">英語</option> --}}
-                            {{-- 0812 add --}}
                         </div>
                     </div>
                 </div>
