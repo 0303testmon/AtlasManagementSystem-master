@@ -100,18 +100,29 @@
                         </div>
                         <div type='checkbox' class="selected_engineer">
                             <label>選択科目</label>
-                            <div>
+                            {{-- 0824 add --}}
+                            <p class="m-0 p-0"><label>国語</label><input type="checkbox" name="check[]"
+                                    value="0"{$checked["check"]["0"]}></p>
+                            <p class="m-0 p-0"><label>数学</label><input type="checkbox" name="check[]"
+                                    value="1"{$checked["check"]["1"]}></p>
+                            <p class="m-0 p-0"><label>英語</label><input type="checkbox" name="check[]"
+                                    value="2"{$checked["check"]["2"]}></p>
+                            {{-- 0824 add --}}
+                            {{-- <div>
                                 <input type="checkbox" name="subject" value="1" />
-                                <label>国語</label>
+                                <label>国語</label><input type="checkbox" name="check[]"
+                                    value="0"{$checked["check"]["0"]}>
                             </div>
                             <div>
                                 <input type="checkbox" name="subject" value="2" />
-                                <label>数学</label>
+                                <label>数学</label><input type="checkbox" name="check[]"
+                                    value="1"{$checked["check"]["1"]}>
                             </div>
                             <div>
                                 <input type="checkbox" name="subject" value="3" />
-                                <label>英語</label>
-                            </div>
+                                <label>英語</label><input type="checkbox" name="check[]"
+                                    value="2"{$checked["check"]["2"]}>
+                            </div> --}}
                             {{-- <option value="1">国語</option>
                             <option value="2">数学</option>
                             <option value="3">英語</option> --}}
