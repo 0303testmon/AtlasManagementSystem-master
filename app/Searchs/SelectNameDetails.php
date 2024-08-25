@@ -17,6 +17,13 @@ class SelectNameDetails implements DisplayUsers{
     }else{
       $role = array($role);
     }
+    // 0825 add
+    if(is_null($subjects)){
+      $subjects = ['1', '2', '3'];
+    }else{
+      $subjects = array($subjects);
+    }
+    // 0825 add
     $users = User::with('subjects')
     ->where(function($q) use ($keyword){
       $q->Where('over_name', 'like', '%'.$keyword.'%')
@@ -29,9 +36,8 @@ class SelectNameDetails implements DisplayUsers{
       ->whereIn('role', $role);
     })
     // 0824 add
-    ->whereHas('subjects', function($q) use ($subjects, $checked){
-      $q->where('subjects.id', $subjects)
-      ->whereIn('check[]', $checked);
+    ->whereHas('subjects', function($q) use ($subjects){
+      $q->where('subjects.id', $subjects);
     // 0824 add
     })
     ->orderBy('over_name_kana', $updown)->get();

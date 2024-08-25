@@ -101,12 +101,18 @@
                         <div type='checkbox' class="selected_engineer">
                             <label>選択科目</label>
                             {{-- 0824 add --}}
-                            <p class="m-0 p-0"><label>国語</label><input type="checkbox" name="check[]"
+                            <p class="m-0 p-0"><label>国語</label><input type="checkbox" name="subjects" value="1"
+                                    form="userSearchRequest"></p>
+                            <p class="m-0 p-0"><label>数学</label><input type="checkbox" name="subjects" value="2"
+                                    form="userSearchRequest"></p>
+                            <p class="m-0 p-0"><label>英語</label><input type="checkbox" name="subjects" value="3"
+                                    form="userSearchRequest"></p>
+                            {{-- <p class="m-0 p-0"><label>国語</label><input type="checkbox" name="check[]"
                                     value="0"{$checked["check"]["0"]}></p>
                             <p class="m-0 p-0"><label>数学</label><input type="checkbox" name="check[]"
                                     value="1"{$checked["check"]["1"]}></p>
                             <p class="m-0 p-0"><label>英語</label><input type="checkbox" name="check[]"
-                                    value="2"{$checked["check"]["2"]}></p>
+                                    value="2"{$checked["check"]["2"]}></p> --}}
                             {{-- 0824 add --}}
                             {{-- <div>
                                 <input type="checkbox" name="subject" value="1" />
