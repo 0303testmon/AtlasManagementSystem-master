@@ -63,7 +63,10 @@ class RegisterController extends Controller
 
          //0817 addバリデーション
         $request->validate([
-            'over_name' => 'required | max:10 | string',
+            'over_name' => 'required | string | max:10',
+            'under_name' => 'required | string | max:10',
+            'over_name_kana' => 'required | string | regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u | max:30',
+            'under_name_kana' => 'required | string | regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u | max:30',
         //     'mail_address' => 'required | between:5,40 | unique:users',
         //     'password' => 'required | alpha_dash | between:8,30 | confirmed' ,
         ]);
