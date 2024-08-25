@@ -67,8 +67,11 @@ class RegisterController extends Controller
             'under_name' => 'required | string | max:10',
             'over_name_kana' => 'required | string | regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u | max:30',
             'under_name_kana' => 'required | string | regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u | max:30',
-        //     'mail_address' => 'required | between:5,40 | unique:users',
-        //     'password' => 'required | alpha_dash | between:8,30 | confirmed' ,
+            'mail_address' => 'required | email:strict,dns,spoof | unique:users | max:100',
+            'sex' => 'required' ,
+            'old_year' => 'required | date_format:Y-m-d | ' ,
+            'role' => 'required' ,
+            'password' => 'required | between:8,30 | confirmed' ,
         ]);
         // 0817 add
 
