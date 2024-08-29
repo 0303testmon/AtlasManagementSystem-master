@@ -69,7 +69,10 @@ class RegisterController extends Controller
             'under_name_kana' => 'required | string | regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u | max:30',
             'mail_address'=>'required|email|unique:users|max:100',
             'sex' => 'required' ,
-            'date_field'=>'required|date|after:01/01/2000|before:08/25/2024',
+            // 'date_field'=>'required|date|after:01/01/2000|before:08/25/2024',
+            'old_year'=>'required|after:2000|before:2024',
+            'old_month'=>'required',
+            'old_day'=>'required|after:1|before:31',
             'role' => 'required' ,
             'password'=>'required|between:8,30|same:password'
         ]);
