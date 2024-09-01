@@ -20,6 +20,10 @@ class PostComment extends Model
     public function post(){
         return $this->belongsTo('App\Models\Posts\Post');
     }
+    // 0901 add コメントしてるかどうか
+    public function user(){
+    return $this->belongsTo('App\Models\Users\User');
+}
 
     public function commentUser($user_id){
         return User::where('id', $user_id)->first();

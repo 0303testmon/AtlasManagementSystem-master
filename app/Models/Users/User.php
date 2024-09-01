@@ -57,6 +57,11 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany('App\Models\Posts\Post');
     }
+    // 0901 add コメントしてるかどうか
+    public function postComments(){
+    return $this->hasMany('App\Models\Posts\PostComment');
+    }
+    // 0901 add コメントしてるかどうか
 
     public function calendars(){
         return $this->belongsToMany('App\Models\Calendars\Calendar', 'calendar_users', 'user_id', 'calendar_id')->withPivot('user_id', 'id');
