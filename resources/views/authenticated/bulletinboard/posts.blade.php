@@ -14,21 +14,22 @@
                             <div class="mr-5">
                                 {{-- 0901 add --}}
                                 {{-- {{ dd($post) }}; --}}
-                                {{-- @if (Auth::user()->postComments($post->id)) --}}
                                 <i class="fa fa-comment"></i>
                                 @if ($post->postComments->count())
                                     <span class="">{{ $post->postComments->count() }}</span>
-                                    {{-- class="">{{ Auth::user()->postComments()->count() }}</span> --}}
-                                    {{-- <i class="fa fa-comment" post_id="{{ $post->id }}"></i><span
-                                        class="comment_counts{{ $post->id }}"></span> --}}
                                 @endif
                                 {{-- 0901 add --}}
                             </div>
                             <div>
                                 @if (Auth::user()->is_Like($post->id))
-                                    <p class="m-0"><i class="fas fa-heart un_like_btn"
-                                            post_id="{{ $post->id }}"></i><span
-                                            class="like_counts{{ $post->id }}"></span></p>
+                                    <p class="m-0"><i class="fas fa-heart un_like_btn" post_id="{{ $post->id }}"></i>
+
+                                        {{-- @if ($post->Likes->count())
+                                            <span class="">{{ $post->Likes->count() }}</span>
+                                        @endif --}}
+
+                                        <span class="like_counts{{ $post->id }}"></span>
+                                    </p>
                                 @else
                                     <p class="m-0"><i class="fas fa-heart like_btn"
                                             post_id="{{ $post->id }}"></i><span

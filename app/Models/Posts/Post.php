@@ -23,6 +23,11 @@ class Post extends Model
         return $this->hasMany('App\Models\Posts\PostComment');
     }
 
+        //0901 add いいねしてるかどうか
+    public function Likes(){
+        return $this->hasMany('App\Models\Posts\Like');
+    }
+
     public function subCategories(){
         // 20240713 add >>
         return $this->hasMany('App\Models\Categories\SubCategory');

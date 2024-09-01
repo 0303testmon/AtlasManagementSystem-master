@@ -63,6 +63,12 @@ class User extends Authenticatable
     }
     // 0901 add コメントしてるかどうか
 
+    // 0901 add いいねしてるかどうか
+    public function Likes(){
+    return $this->hasMany('App\Models\Posts\Like');
+    }
+    // 0901 add いいねしてるかどうか
+
     public function calendars(){
         return $this->belongsToMany('App\Models\Calendars\Calendar', 'calendar_users', 'user_id', 'calendar_id')->withPivot('user_id', 'id');
     }
