@@ -28,7 +28,8 @@
                                             <span class="">{{ $post->Likes->count() }}</span>
                                         @endif --}}
 
-                                        <span class="like_counts{{ $post->id }}"></span>
+                                        <span
+                                            class="like_counts{{ $post->id }}">{{ $like->likeCounts($post->id) }}</span>
                                     </p>
                                 @else
                                     <p class="m-0"><i class="fas fa-heart like_btn"
