@@ -7,8 +7,6 @@
 
                 <p class="text-center">{{ $calendar->getTitle() }}</p>
                 <div class="">
-                    <label>aa</label>
-
                     {!! $calendar->render() !!}
                 </div>
             </div>

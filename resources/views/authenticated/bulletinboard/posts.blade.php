@@ -23,18 +23,17 @@
                             <div>
                                 @if (Auth::user()->is_Like($post->id))
                                     <p class="m-0"><i class="fas fa-heart un_like_btn" post_id="{{ $post->id }}"></i>
-
-                                        {{-- @if ($post->Likes->count())
-                                            <span class="">{{ $post->Likes->count() }}</span>
-                                        @endif --}}
-
+                                        {{-- 0902 add --}}
                                         <span
                                             class="like_counts{{ $post->id }}">{{ $like->likeCounts($post->id) }}</span>
                                     </p>
                                 @else
                                     <p class="m-0"><i class="fas fa-heart like_btn"
                                             post_id="{{ $post->id }}"></i><span
-                                            class="like_counts{{ $post->id }}"></span></p>
+                                            class="like_counts{{ $post->id }}">{{ $like->likeCounts($post->id) }}</span>
+                                        {{-- 0902 add --}}
+
+                                    </p>
                                 @endif
                             </div>
                         </div>
