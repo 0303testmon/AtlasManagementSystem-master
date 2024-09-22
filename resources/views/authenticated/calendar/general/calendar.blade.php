@@ -8,6 +8,11 @@
                 <p class="text-center">{{ $calendar->getTitle() }}</p>
                 <div class="">
                     {!! $calendar->render() !!}
+                    {{-- 0916 add --}}
+                    {{-- <div class="adjust-table-btn m-auto text-right">
+                        <input type="submit" class="btn btn-primary" value="登録" form="reserveSetting"
+                            onclick="return confirm('登録してよろしいですか？')"> --}}
+                    {{-- 0916 add --}}
                 </div>
             </div>
             <div class="text-right w-75 m-auto">

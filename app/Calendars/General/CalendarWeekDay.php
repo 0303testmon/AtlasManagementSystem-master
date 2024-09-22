@@ -53,6 +53,7 @@ class CalendarWeekDay{
      $toDay = $this->carbon->today()->format("Y-m-d");
      if($toDay >= $ymd){
       $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="" disabled>受付終了</button>';
+      $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
      }else{
       $html[] = '<select name="getPart[]" class="border-primary" style="width:70px; border-radius:5px;" form="reserveParts">';
      $html[] = '<option value="" selected></option>';
@@ -73,6 +74,24 @@ class CalendarWeekDay{
      }
      $html[] = '</select>';
     }
+
+    // 0921 add
+    $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" data-toggle="modal" data-target="#deleteModal' . $day->authReserveDate($day->everyDay())->first()->setting_part . '" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+    $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
+    $html[] = '<div class="modal fade" id="deleteModal' .  . '" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-body">';
+    $html[] = '予約日 : ' . $reservePart . '<br>時間 : ' . $reservePart . '<br>';
+    $html[] = '上記の予約をキャンセルしてもよろしいですか？</div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+    <button type="button" class="btn btn-primary">キャンセル</button>
+    </div>
+    </div></div></div>';
+    // 0921 add
+
+
     // //  0905 add
     // //  $html[] = '<select name="getPart[]" class="border-primary" style="width:70px; border-radius:5px;" form="reserveParts">';
     //  $toDay = $this->carbon->today()->format("Y-m-d");
