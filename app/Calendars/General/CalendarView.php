@@ -61,9 +61,18 @@ class CalendarView{
           if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
             $html[] = '<p class="m-auto p-0 w-75" style="font-size:12px">'.$reservePart.'</p>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
-          }else{
-            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+          // }else{
+          //   $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
+          //   $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
+
+            // 0923 add
+            }else{
+            $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" data-toggle="modal" data-target="#deleteModal' . $day->authReserveDate($day->everyDay())->first()->setting_reserve . '" value="'. $day->authReserveDate($day->everyDay())->first()->setting_reserve .'">'. $reservePart .'</button>';
             $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
+            $html[] = '<div class="modal fade" id="deleteModal' . $day->authReserveDate($day->everyDay())->first()->setting_reserve . '" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-body">';
+            $html[] = '予約日 : ' . $day->authReserveDate($day->everyDay())->first()->setting_reserve . '<br>時間 : ' . $reservePart . '<br>';
+            $html[] = '上記の予約をキャンセルしてもよろしいですか？</div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button><button type="button" class="btn btn-primary">キャンセル</button></div></div></div></div>';
+
           }
         }else{
           $html[] = $day->selectPart($day->everyDay());
