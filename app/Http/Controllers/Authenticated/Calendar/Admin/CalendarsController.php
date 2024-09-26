@@ -45,4 +45,9 @@ class CalendarsController extends Controller
         }
         return redirect()->route('calendar.admin.setting', ['user_id' => Auth::id()]);
     }
+
+    // 0926 add
+    public function delete(Request $request){
+        dd($request->partId);
+    }
 }
