@@ -49,5 +49,7 @@ class CalendarsController extends Controller
     // 0926 add
     public function delete(Request $request){
         dd($request->partId);
+        ReserveSettingsUsers::where('id', $id)->delete();
+        return redirect('/index');
     }
 }
