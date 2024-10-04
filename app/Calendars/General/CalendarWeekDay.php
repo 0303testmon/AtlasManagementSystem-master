@@ -137,4 +137,20 @@ class CalendarWeekDay{
      return Auth::user()->reserveSettings->where('setting_reserve', $reserveDate);
    }
 
+  //  1004 add
+  function dayPartCounts($ymd){
+    $html = [];
+    // 1部の予約人数
+    $one_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '1')->first();
+    // 2部の予約人数
+    $two_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '2')->first();
+    // 3部の予約人数
+    $three_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '3')->first();
+
+    $html[] = '<div class="text-left">';
+    if($one_part){
+      $html[] = '<p class="day_part m-0 pt-1">1部 <a href="http://192.168.0.220:8081/calendar/'. Auth::user()->id .'">'. ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '3')->first()->limit_users .'</a></p>';
+    }
+  }
+  //  1004 add
 }
