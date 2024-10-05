@@ -25,24 +25,24 @@ class CalendarWeekDay{
   }
 
   //  1004 add
-  function dayPartCounts($ymd){
+    function dayPartCounts($ymd){
     $html = [];
-    // 1部の予約人数
+    // 1部の予約数
     $one_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '1')->first();
-    // 2部の予約人数
+    // 2部の予約数
     $two_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '2')->first();
-    // 3部の予約人数
+    // 3部の予約数
     $three_part = ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '3')->first();
 
     $html[] = '<div class="text-left">';
     if($one_part){
-      $html[] = '<p class="day_part m-0 pt-1">1部<a href="http://127.0.0.1:8000/calendar/'. Auth::user()->id.'">　'. ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '1')->first()->limit_users.'</a></p>';
+      $html[] = '<p class="day_part m-0 pt-1">1部 <a href="http://127.0.0.1:8000/calendar/'. Auth::id() .'">　'. 20 - $one_part->limit_users .'</a></p>';
     }
     if($two_part){
-      $html[] = '<p class="day_part m-0 pt-1">2部<a href="http://127.0.0.1:8000/calendar/'. Auth::user()->id.'">　'. ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '2')->first()->limit_users.'</a></p>';
+      $html[] = '<p class="day_part m-0 pt-1">2部 <a href="http://127.0.0.1:8000/calendar/'. Auth::id() .'">　'. 20 - $two_part->limit_users .'</a></p>';
     }
     if($three_part){
-      $html[] = '<p class="day_part m-0 pt-1">3部<a href="http://127.0.0.1:8000/calendar/'. Auth::user()->id.'">　'. ReserveSettings::with('users')->where('setting_reserve', $ymd)->where('setting_part', '3')->first()->limit_users.'</a></p>';
+      $html[] = '<p class="day_part m-0 pt-1">3部 <a href="http://127.0.0.1:8000/calendar/'. Auth::id() .'">　'. 20 - $three_part->limit_users .'</a></p>';
     }
     $html[] = '</div>';
 
