@@ -11,6 +11,7 @@
                     <tr class="text-center">
                         <th class="w-25">ID</th>
                         <th class="w-25">名前</th>
+                        <th class="w-25">場所</th>
                     </tr>
                     {{-- 1005 add --}}
                     @foreach ($reservePersons as $reservePerson)
@@ -18,6 +19,7 @@
                             <tr class="text-center">
                                 <td class="w-25">{{ $user->id }}</td>
                                 <td class="w-25">{{ $user->over_name }} {{ $user->under_name }}</td>
+                                <td class="w-25">リモート</td>
                             </tr>
                         @endforeach
                     @endforeach
