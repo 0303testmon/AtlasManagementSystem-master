@@ -23,13 +23,29 @@
     <div class="d-flex">
         <div class="sidebar">
             @section('sidebar')
-                <p><a href="{{ route('top.show') }}">マイページ</a></p>
-                <p><a href="/logout">ログアウト</a></p>
-                <p><a href="{{ route('calendar.general.show', ['user_id' => Auth::id()]) }}">スクール予約</a></p>
-                <p><a href="{{ route('calendar.admin.show', ['user_id' => Auth::id()]) }}">スクール予約確認</a></p>
-                <p><a href="{{ route('calendar.admin.setting', ['user_id' => Auth::id()]) }}">スクール枠登録</a></p>
-                <p><a href="{{ route('post.show') }}">掲示板</a></p>
-                <p><a href="{{ route('user.show') }}">ユーザー検索</a></p>
+                <p><a href="{{ route('top.show') }}">
+                        <img src="/image/home.png" height="24px" viewBox="0 0 24 24" width="24px" fill="#fff"></img>
+                        マイページ</a></p>
+                <p><a href="/logout">
+                        <img src="/image/logout.png" height="24px" viewBox="0 0 24 24" width="24px" fill="#fff"></img>
+                        ログアウト</a></p>
+                <p><a href="{{ route('calendar.general.show', ['user_id' => Auth::id()]) }}">
+                        <img src="/image/karender.png" height="24px" viewBox="0 0 24 24" width="24px"
+                            fill="#fff"></img>スクール予約</a></p>
+                <p><a href="{{ route('calendar.admin.show', ['user_id' => Auth::id()]) }}">
+                        <img src="/image/check.png" height="24px" viewBox="0 0 24 24" width="24px" fill="#fff"></img>
+                        スクール予約確認</a></p>
+                <p><a href="{{ route('calendar.admin.setting', ['user_id' => Auth::id()]) }}">
+                        <img src="/image/touroku.png" height="24px" viewBox="0 0 24 24" width="24px"
+                            fill="#fff"></img>
+                        スクール枠登録</a></p>
+                <p><a href="{{ route('post.show') }}">
+                        <img src="/image/keijiban.png" height="24px" viewBox="0 0 24 24" width="24px"
+                            fill="#fff"></img>
+                        掲示板</a></p>
+                <p><a href="{{ route('user.show') }}">
+                        <img src="/image/user.png" height="24px" viewBox="0 0 24 24" width="24px" fill="#fff"></img>
+                        ユーザー検索</a></p>
             @show
         </div>
         <div class="main-container">
