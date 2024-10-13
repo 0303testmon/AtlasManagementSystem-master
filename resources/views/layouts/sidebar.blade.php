@@ -32,13 +32,15 @@
                 <p><a href="{{ route('calendar.general.show', ['user_id' => Auth::id()]) }}">
                         <img src="/image/karender.png" height="24px" viewBox="0 0 24 24" width="24px"
                             fill="#fff"></img>スクール予約</a></p>
-                <p><a href="{{ route('calendar.admin.show', ['user_id' => Auth::id()]) }}">
-                        <img src="/image/check.png" height="24px" viewBox="0 0 24 24" width="24px" fill="#fff"></img>
-                        スクール予約確認</a></p>
-                <p><a href="{{ route('calendar.admin.setting', ['user_id' => Auth::id()]) }}">
-                        <img src="/image/touroku.png" height="24px" viewBox="0 0 24 24" width="24px"
-                            fill="#fff"></img>
-                        スクール枠登録</a></p>
+                @can('admin')
+                    <p><a href="{{ route('calendar.admin.show', ['user_id' => Auth::id()]) }}">
+                            <img src="/image/check.png" height="24px" viewBox="0 0 24 24" width="24px" fill="#fff"></img>
+                            スクール予約確認</a></p>
+                    <p><a href="{{ route('calendar.admin.setting', ['user_id' => Auth::id()]) }}">
+                            <img src="/image/touroku.png" height="24px" viewBox="0 0 24 24" width="24px"
+                                fill="#fff"></img>
+                            スクール枠登録</a></p>
+                @endcan
                 <p><a href="{{ route('post.show') }}">
                         <img src="/image/keijiban.png" height="24px" viewBox="0 0 24 24" width="24px"
                             fill="#fff"></img>

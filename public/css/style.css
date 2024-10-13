@@ -288,7 +288,7 @@ li {
   /* border: 1px solid #111; */
 }
 
-.table1 tr:nth-child(2n) {
+.table1 tr:nth-child(2n+1) {
   background-color: #afdfe4;
 }
 

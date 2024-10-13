@@ -6,8 +6,8 @@
             {{-- 1005 add --}}
             {{-- {{ dd($date) }}; --}}
             <p><span>{{ $date }}日</span><span class="ml-3">{{ $part }}部</span></p>
-            <div class="" style="padding-bottom:20px; box-shadow: 4px 4px 8px #dddddd; border-radius: 10px;">
-                <table class="table1 m-auto ">
+            <div class="" style="padding:5px; box-shadow: 4px 4px 8px #dddddd; border-radius: 10px;">
+                <table class="table1 m-auto " width="100%">
                     <tr class="text-center" style="background-color: #4E91B5; color:#fff">
                         <th>ID</th>
                         <th>名前</th>
