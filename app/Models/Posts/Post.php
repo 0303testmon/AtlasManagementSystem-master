@@ -30,7 +30,8 @@ class Post extends Model
 
     public function subCategories(){
         // 20240713 add >>
-        return $this->hasMany('App\Models\Categories\SubCategory');
+        // return $this->hasMany('App\Models\Categories\SubCategory');
+         return $this->belongsToMany('App\Models\Categories\SubCategory', 'post_sub_categories', 'post_id', 'sub_category_id');
         // 20240713 add <<
     }
 
