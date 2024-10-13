@@ -6,8 +6,8 @@
             {{-- 1005 add --}}
             {{-- {{ dd($date) }}; --}}
             <p><span>{{ $date }}日</span><span class="ml-3">{{ $part }}部</span></p>
-            <div class="h-75 border">
-                <table class="table table-info table-striped">
+            <div class="h-75 border" style="padding-bottom:20px; box-shadow: 4px 4px 8px #dddddd; border-radius: 10px;">
+                <table class="table1">
                     <tr class="text-center">
                         <th class="w-25">ID</th>
                         <th class="w-25">名前</th>

@@ -279,3 +279,19 @@ li {
 .subject_inner {
   display: none;
 }
+
+
+
+.table1 td,
+.table1 th {
+  border: none;
+  /* border: 1px solid #111; */
+}
+
+.table1 tr:nth-child(2n) {
+  background-color: #afdfe4;
+}
+
+.table1 {
+  border-collapse: collapse;
+}
