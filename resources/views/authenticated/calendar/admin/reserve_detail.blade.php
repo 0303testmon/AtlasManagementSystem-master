@@ -7,7 +7,7 @@
             {{-- {{ dd($date) }}; --}}
             <p><span>{{ $date }}日</span><span class="ml-3">{{ $part }}部</span></p>
             <div class="h-75 border">
-                <table class="">
+                <table class="table table-info table-striped">
                     <tr class="text-center">
                         <th class="w-25">ID</th>
                         <th class="w-25">名前</th>
