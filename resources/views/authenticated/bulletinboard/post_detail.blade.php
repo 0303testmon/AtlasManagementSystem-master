@@ -9,9 +9,11 @@
                         </div>
                         <div>
                             <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}"
-                                post_id="{{ $post->id }}">編集</span>
+                                post_id="{{ $post->id }}"><button type="button"
+                                    class="btn btn-primary">編集</button></span>
                             <a href="{{ route('post.delete', ['id' => $post->id]) }}"
-                                onclick="return confirm('削除してよろしいですか？')">削除</a>
+                                onclick="return confirm('削除してよろしいですか？')"><button type="button"
+                                    class="btn btn-danger">削除</button></a>
                         </div>
                     </div>
 
