@@ -59,6 +59,8 @@ class PostsController extends Controller
             'post_title' => $request->post_title,
             'post' => $request->post_body
         ]);
+           // 20241014 add >>
+        $post->subCategories()->attach($request->post_category_id);
         return redirect()->route('post.show');
     }
 
