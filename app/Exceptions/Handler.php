@@ -50,8 +50,8 @@ class Handler extends ExceptionHandler
      *
      * @throws \Exception
      */
-    public function render($request, Throwable $exception)
-    // public function render($request, Exception $exception)
+    // public function render($request, Throwable $exception)
+    public function render($request, Exception $exception)
     {
         if ($exception instanceof TokenMismatchException) {
 			return redirect()->route('login');
