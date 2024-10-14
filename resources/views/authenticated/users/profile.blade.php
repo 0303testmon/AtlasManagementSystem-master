@@ -34,7 +34,7 @@
                             </form>
 
                             {{-- 1013 add --}}
-                            <div type='checkbox' class="selected_engineer">
+                            {{-- <div type='checkbox' class="selected_engineer">
                                 <label>選択科目</label>
 
                                 <p class="m-0 p-0"><label>国語</label><input type="checkbox" name="subject[]" value="1"
@@ -44,7 +44,7 @@
                                 <p class="m-0 p-0"><label>英語</label><input type="checkbox" name="subject[]" value="3"
                                         form="userSearchRequest"></p>
 
-                            </div>
+                            </div> --}}
 
                         </div>
                     @endcan
