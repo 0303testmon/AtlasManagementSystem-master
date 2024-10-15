@@ -52,12 +52,26 @@
                 <input type="submit" name="my_posts" class="category_btn" value="自分の投稿" form="postSearchRequest">
                 <!-- change 20242013 >> -->
                 <!-- <ul>
-                            {{-- @foreach ($categories as $category)
+                                                        {{-- @foreach ($categories as $category)
                         <li class="main_categories" category_id="{{ $category->id }}">
                             <span>{{ $category->main_category }}<span>
                         </li>
                     @endforeach --}}
-                        </ul> -->
+                                                    </ul> -->
+
+
+                <!--1015アコーディオンメニュー矢印 -->
+                <div class="menu">
+                    <input type="checkbox" id="menu_bar01" />
+                    <label for="menu_bar01">カテゴリー検索</label>
+                    <ul id="links01">
+                        <li>内容01-A</li>
+                        <li>内容01-B</li>
+                        <li>内容01-C</li>
+                    </ul>
+                </div>
+                <!--1015アコーディオンメニュー矢印 -->
+
                 <ul>
                     @foreach ($categories as $category)
                         <li class="main_categories" category_id="{{ $category->id }}">
