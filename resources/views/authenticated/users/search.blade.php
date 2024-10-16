@@ -81,7 +81,7 @@
                     </select>
                 </div>
                 <div class="">
-                    <p class="m-0 search_conditions"><span>検索条件の追加</span></p>
+                    <span class="m-0 search_conditions_btn"><span>検索条件の追加<span class="inn"></span></span></span>
                     <div class="search_conditions_inner">
                         <div>
                             <label>性別</label>
