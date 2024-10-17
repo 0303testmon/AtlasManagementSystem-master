@@ -4,7 +4,7 @@ $(function () {
     $('.category_num' + category_id).slideToggle();
     // 20241016 change >>
     // is-openのクラスを付けたいhtmlタグを指定する
-    $(jqueryのセレクタでググってね).toggleClass('is-open');
+    $("span.main_categories_btn").toggleClass('is-open');
     $(this).siblings('.category_num' + category_id).toggleClass('is-open');
     // 20241016 change <<
   });
