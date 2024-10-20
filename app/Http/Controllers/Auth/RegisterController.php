@@ -60,25 +60,28 @@ class RegisterController extends Controller
         return view('auth.register.register', compact('subjects'));
     }
 
-    public function registerPost(Request $request)
+     // 20241021 change >>
+    // public function registerPost(Request $request)
+    public function registerPost(RegisterFormRequest $request)
+    // 20241021 change <<
     {
 
 
          //0817 addバリデーション
-        $request->validate([
-            'over_name' => 'required | string | max:10',
-            'under_name' => 'required | string | max:10',
-            'over_name_kana' => 'required | string | regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u | max:30',
-            'under_name_kana' => 'required | string | regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u | max:30',
-            'mail_address'=>'required|email|unique:users|max:100',
-            'sex' => 'required' ,
-            // 'date_field'=>'required|date|after:01/01/2000|before:08/25/2024',
-            'old_year'=>'required|after:2000|before:2024',
-            'old_month'=>'required',
-            'old_day'=>'required|after:1|before:31',
-            'role' => 'required' ,
-            'password'=>'required|between:8,30|same:password'
-        ]);
+        // $request->validate([
+        //     'over_name' => 'required | string | max:10',
+        //     'under_name' => 'required | string | max:10',
+        //     'over_name_kana' => 'required | string | regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u | max:30',
+        //     'under_name_kana' => 'required | string | regex:/^[ア-ン゛゜ァ-ォャ-ョー]+$/u | max:30',
+        //     'mail_address'=>'required|email|unique:users|max:100',
+        //     'sex' => 'required' ,
+        //     // 'date_field'=>'required|date|after:01/01/2000|before:08/25/2024',
+        //     'old_year'=>'required|after:2000|before:2024',
+        //     'old_month'=>'required',
+        //     'old_day'=>'required|after:1|before:31',
+        //     'role' => 'required' ,
+        //     'password'=>'required|between:8,30|same:password'
+        // ]);
         // 0817 add
 
         DB::beginTransaction();
