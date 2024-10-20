@@ -109,4 +109,13 @@ class RegisterController extends Controller
             return redirect()->route('loginView');
         }
     }
+
+    public function messages(){
+  return [
+    'over_name.required' => '名前を入力してください',
+    'age.numeric' => '整数で入力してください',
+    'old_year.between' => '2000～2024で入力してください',
+    'over_name.string' => '文字列で入力してください',
+  ];
+}
 }

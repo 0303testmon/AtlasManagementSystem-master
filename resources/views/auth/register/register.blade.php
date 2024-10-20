@@ -219,6 +219,7 @@
             document.getElementsByName(errorKeyArray[i])[0].parentElement.innerHTML = '<div style="color:red;">' +
                 errorArray[i] + '</div>' + document.getElementsByName(errorKeyArray[i])[0].parentElement.innerHTML;
         }
+
         // document.getElementsByName()
     </script>
 </body>
