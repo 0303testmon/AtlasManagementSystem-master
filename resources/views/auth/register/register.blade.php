@@ -197,7 +197,7 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <label style="font-size:13px">月</label>
+                    <label style="font-size:13px">日</label>
                 </div>
                 <div class="mt-3">
                     <label class="d-block m-0" style="font-size:13px">役職</label>
@@ -220,6 +220,10 @@
                     @endforeach
                 </div>
                 <div class="mt-3">
+                    {{-- 1020 add --}}
+                    @if ($errors->first('password'))
+                        <span class="error_message">{{ $errors->first('password') }}</span>
+                    @endif
                     <label class="d-block m-0" style="font-size:13px">パスワード</label>
                     <div class="border-bottom border-primary">
                         <input type="password" class="border-0 w-100 password" name="password">
@@ -246,7 +250,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/register.js') }}" rel="stylesheet"></script>
-    <script>
+    {{-- <script>
         errorKeyArray = @json($errors->keys());
         errorArray = @json($errors->all());
         for (var i = 0; i < errorKeyArray.length; i++) {
@@ -256,7 +260,7 @@
         }
 
         // document.getElementsByName()
-    </script>
+    </script>  --}}
 </body>
 
 </html>

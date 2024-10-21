@@ -35,7 +35,8 @@ class RegisterFormRequest extends FormRequest
             'sex' => 'required' ,
             'old_year'=>'required|after:2000|before:2024',
             'old_month'=>'required',
-            'old_day'=>'required|after:1|before:31',
+            'old_day'=>'required',
+            // 'old_day'=>'required|after:1|before:31',
             'role' => 'required' ,
             'password'=>'required|between:8,30|same:password'
         ];
@@ -54,8 +55,8 @@ class RegisterFormRequest extends FormRequest
             'mail_address.max'=>'100文字以内で入力してください',
             'old_year.after'=>'2000年以上を指定してください',
             'old_year.before'=>'2024年以下を指定してください',
-            'old_day.after'=>'1日以上を指定してください',
-            'old_day.before'=>'31日以下を指定してください',
+            // 'old_day.after'=>'1日以上を指定してください',
+            // 'old_day.before'=>'31日以下を指定してください',
             'password.between'=>'8～30文字の間で入力してください',
             'password.same'=>'確認用パスワードが間違っています',
         ];
