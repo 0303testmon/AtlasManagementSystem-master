@@ -7,14 +7,20 @@
                     <div class="detail_inner_head">
                         <div>
                         </div>
-                        <div>
-                            <span class="edit-modal-open" post_title="{{ $post->post_title }}" post_body="{{ $post->post }}"
-                                post_id="{{ $post->id }}"><button type="button"
-                                    class="btn btn-primary">編集</button></span>
-                            <a href="{{ route('post.delete', ['id' => $post->id]) }}"
-                                onclick="return confirm('削除してよろしいですか？')"><button type="button"
-                                    class="btn btn-danger">削除</button></a>
-                        </div>
+                        {{-- 1024 add 自分のだけ編集、削除 --}}
+                        @if (Auth::user()->id == $post->user->id)
+                            <div>
+                                <span class="edit-modal-open" post_title="{{ $post->post_title }}"
+                                    post_body="{{ $post->post }}" post_id="{{ $post->id }}"><button type="button"
+                                        class="edit-modal-open btn btn-primary">編集</button></span>
+                                <a href="{{ route('post.delete', ['id' => $post->id]) }}"
+                                    onclick="return confirm('削除してよろしいですか？')"><button type="button"
+                                        class="btn btn-danger">削除</button></a>
+                            </div>
+                        @else
+                            <div>
+                            </div>
+                        @endif
                     </div>
 
                     <div class="contributor d-flex">
