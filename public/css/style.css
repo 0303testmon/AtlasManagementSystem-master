@@ -448,3 +448,21 @@ li {
   background-color: #ee62cc;
   border-color: #ee5cbf;
 }
+
+.old_year {
+  border-inline: none;
+  border-top: none;
+  border-color: #007bff;
+}
+
+.old_month {
+  border-inline: none;
+  border-top: none;
+  border-color: #007bff;
+}
+
+.old_day {
+  border-inline: none;
+  border-top: none;
+  border-color: #007bff;
+}

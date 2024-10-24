@@ -73,10 +73,12 @@
                 @endforeach
                 </ul>  --}}
                 <!-- change 20242013 << -->
+                <lavel></lavel>
+                <label>カテゴリー検索</label>
                 <ul>
                     @foreach ($categories as $category)
                         <li class="main_categories" category_id="{{ $category->id }}">
-                            <span class="main_categories_btn is-open" style="color: black"
+                            <span class="main_categories_btn is-open" style="color: black; text-decolation:underline"
                                 id="{{ $category->id }}">{{ $category->main_category }}<span class="inn"></span><span>
                         </li>
                         <div class="category_num{{ $category->id }} is-open">
