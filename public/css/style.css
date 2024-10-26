@@ -229,8 +229,8 @@ li {
   border-radius: 5px;
   padding: 0 5px;
   border: none;
-  background: #999;
-  color: #FFF;
+  background: #E8F0F7;
+  color: #000;
 }
 
 .main_categories span,
@@ -273,6 +273,7 @@ li {
     &:before {
       top: 80%;
       transform: translate(-50%, -60%) rotate(-45deg);
+      margin-left: 90px;
     }
   }
 }
