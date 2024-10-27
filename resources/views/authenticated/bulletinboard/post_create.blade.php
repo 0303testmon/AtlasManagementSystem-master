@@ -55,7 +55,7 @@
                     {{-- 20240713 add >> --}}
                     <div class="">
 
-                        @if ($errors->first('sub_category_name'))
+                        @if ($errors->first('sub_category'))
                             <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
                         @endif
                         <p class="m-0">サブカテゴリー</p>
