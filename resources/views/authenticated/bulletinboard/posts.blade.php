@@ -9,9 +9,25 @@
                     <p><span>{{ $post->user->over_name }}</span><span class="ml-3">{{ $post->user->under_name }}</span>さん
                     </p>
                     <p><a href="{{ route('post.detail', ['id' => $post->id]) }}">{{ $post->post_title }}</a></p>
-                    <div class="post_bottom_area d-flex">
-                        <div class="d-flex post_status">
-                            <div class="mr-5">
+                    <div class="container text-center">
+                        <div class="row">
+                            {{-- <div class="post_bottom_area d-flex">
+                                <div class="d-flex post_status"> --}}
+                            {{-- 1027 add --}}
+                            <div class="col">
+                                {{-- <div class="col mr-5"> --}}
+                                {{-- {{ dd($post) }}; --}}
+                                {{-- <i class="fa fa-comment"></i>
+                                <span class="">{{ $post->sub_categories->sub_category }}</span> --}}
+                                {{-- <span class="">{{ $sub_category->sub_category }}</span> --}}
+
+                                {{-- 1027 add --}}
+                            </div>
+                            <div class="col-5">
+                            </div>
+
+                            <div class="col">
+                                {{-- <div class="mr-5"> --}}
                                 {{-- 0901 add --}}
                                 {{-- {{ dd($post) }}; --}}
                                 <i class="fa fa-comment"></i>
@@ -20,7 +36,7 @@
                                 @endif
                                 {{-- 0901 add --}}
                             </div>
-                            <div>
+                            <div class="col">
                                 @if (Auth::user()->is_Like($post->id))
                                     <p class="m-0"><i class="fas fa-heart un_like_btn" post_id="{{ $post->id }}"></i>
                                         {{-- 0902 add --}}
@@ -36,6 +52,9 @@
                                     </p>
                                 @endif
                             </div>
+
+                            {{-- </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
