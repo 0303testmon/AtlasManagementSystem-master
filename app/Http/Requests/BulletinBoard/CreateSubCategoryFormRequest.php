@@ -25,7 +25,9 @@ class CreateSubCategoryFormRequest extends FormRequest
     {
         return [
             //
-            'sub_category_name' => 'required|string|max:100|unique:sub_categories',
+            // 'sub_category_name' => 'required|string|max:100|unique:sub_categories',
+            'main_category_id' => 'required',
+            'sub_category' => 'required|string|max:100|unique:sub_categories',
         ];
     }
 
@@ -33,10 +35,16 @@ class CreateSubCategoryFormRequest extends FormRequest
        public function messages(){
         return [
 
-            'sub_category_name.max' => '最大文字数は100文字です。',
-            'sub_category_name.string' => '文字列で入力してください。',
-            'sub_category_name.required' => 'サブカテゴリーは必ず入力してください。',
-            'sub_category_name.unique' => 'すでに登録されています。',
+            // 'sub_category_name.max' => '最大文字数は100文字です。',
+            // 'sub_category_name.string' => '文字列で入力してください。',
+            // 'sub_category_name.required' => 'サブカテゴリーは必ず入力してください。',
+            // 'sub_category_name.unique' => 'すでに登録されています。',
+
+            'main_category_id.required' => '必須項目です。',
+            'sub_category.max' => '最大文字数は100文字です。',
+            'sub_category.string' => '文字列で入力してください。',
+            'sub_category.required' => '必須項目です。',
+            'sub_category.unique' => 'すでに登録されています。',
         ];
     }
 }
