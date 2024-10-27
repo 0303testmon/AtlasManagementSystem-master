@@ -13,7 +13,7 @@ class CreateSubCategoryFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -35,7 +35,7 @@ class CreateSubCategoryFormRequest extends FormRequest
 
             'sub_category_name.max' => '最大文字数は100文字です。',
             'sub_category_name.string' => '文字列で入力してください。',
-            'sub_category_name.required' => '必須項目です。',
+            'sub_category_name.required' => 'サブカテゴリーは必ず入力してください。',
             'sub_category_name.unique' => 'すでに登録されています。',
         ];
     }

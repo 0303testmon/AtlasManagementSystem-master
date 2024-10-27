@@ -55,6 +55,9 @@
                     {{-- 20240713 add >> --}}
                     <div class="">
 
+                        @if ($errors->first('sub_category_name'))
+                            <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
+                        @endif
                         <p class="m-0">サブカテゴリー</p>
                         <select class="w-100" form="subCategoryRequest" name="main_category_id">
                             @foreach ($main_categories as $main_category)
@@ -66,9 +69,7 @@
 
                         <input type="text" class="w-100" name="sub_category_name" form="subCategoryRequest" required>
                         <input type="submit" value="追加" class="w-100 btn btn-primary p-0" form="subCategoryRequest">
-                        @if ($errors->first('sub_category_name'))
-                            <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
-                        @endif
+
                     </div>
                     {{-- 20230713 add << --}}
                     <form action="{{ route('main.category.create') }}" method="post" id="mainCategoryRequest">

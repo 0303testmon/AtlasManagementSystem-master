@@ -44,19 +44,27 @@ class RegisterFormRequest extends FormRequest
 
     public function messages(){
         return [
+            'over_name.required' => '必須項目です。',
             'over_name.max' => '10文字以内で入力してください',
+            'under_name.required' => '必須項目です。',
             'under_name.max' => '10文字以内で入力してください',
+            'over_name_kana.required' => '必須項目です。',
             'over_name_kana.regex' => 'カタカナで入力してください',
             'over_name_kana.max' => '30文字以内で入力してください',
+            'under_name_kana.required' => '必須項目です。',
             'under_name_kana.regex' => 'カタカナで入力してください',
             'under_name_kana.max' => '30文字以内で入力してください',
+            'mail_address.required' => '必須項目です。',
             'mail_address.email'=>'メールアドレスの形式で入力してください',
             'mail_address.unique'=>'すでに登録されています',
             'mail_address.max'=>'100文字以内で入力してください',
+            'sex.required' => '必須項目です。',
             'old_year.after'=>'2000年以上を指定してください',
             'old_year.before'=>'2024年以下を指定してください',
             // 'old_day.after'=>'1日以上を指定してください',
             // 'old_day.before'=>'31日以下を指定してください',
+            'role.required' => '必須項目です。',
+            'password.required' => '必須項目です。',
             'password.between'=>'8～30文字の間で入力してください',
             'password.same'=>'確認用パスワードが間違っています',
         ];
