@@ -56,7 +56,7 @@
                     <div class="">
 
                         @if ($errors->first('sub_category'))
-                            <span class="error_message">{{ $errors->first('sub_category_name') }}</span>
+                            <span class="error_message">{{ $errors->first('sub_category') }}</span>
                         @endif
                         <p class="m-0">サブカテゴリー</p>
                         <select class="w-100" form="subCategoryRequest" name="main_category_id">
