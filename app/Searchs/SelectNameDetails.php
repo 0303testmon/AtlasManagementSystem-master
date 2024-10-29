@@ -21,7 +21,10 @@ class SelectNameDetails implements DisplayUsers{
     if(is_null($subjects)){
       $subjects = ['1', '2', '3'];
     }else{
-      $subjects = array($subjects);
+        // 1027 add >>
+      // $subjects = array($subjects);
+      $subjects = $subjects;
+      // 1027 add <<
     }
     // 0825 add
     $users = User::with('subjects')
@@ -37,7 +40,7 @@ class SelectNameDetails implements DisplayUsers{
     })
     // 0824 add
     ->whereHas('subjects', function($q) use ($subjects){
-      $q->where('subjects.id', $subjects);
+      $q->wherein('subjects.id', $subjects);
     // 0824 add
     })
     ->orderBy('over_name_kana', $updown)->get();

@@ -12,7 +12,7 @@
                             <div>
                                 <span class="edit-modal-open" post_title="{{ $post->post_title }}"
                                     post_body="{{ $post->post }}" post_id="{{ $post->id }}"><button type="button"
-                                        class="edit-modal-open btn btn-primary">編集</button></span>
+                                        class="btn btn-primary">編集</button></span>
                                 <a href="{{ route('post.delete', ['id' => $post->id]) }}"
                                     onclick="return confirm('削除してよろしいですか？')"><button type="button"
                                         class="btn btn-danger">削除</button></a>
@@ -69,14 +69,20 @@
             <form action="{{ route('post.edit') }}" method="post">
                 <div class="w-100">
                     <div class="modal-inner-title w-50 m-auto">
+                        @if ($errors->first('post_title'))
+                            <span class="error_message">{{ $errors->first('post_title') }}</span>
+                        @endif
                         <input type="text" name="post_title" placeholder="タイトル" class="w-100">
                     </div>
                     <div class="modal-inner-body w-50 m-auto pt-3 pb-3">
+                        @if ($errors->first('post_body'))
+                            <span class="error_message">{{ $errors->first('post_body') }}</span>
+                        @endif
                         <textarea placeholder="投稿内容" name="post_body" class="w-100"></textarea>
                     </div>
                     <div class="w-50 m-auto edit-modal-btn d-flex">
                         <a class="js-modal-close btn btn-danger d-inline-block" href="">閉じる</a>
-                        <input type="hidden" class="edit-modal-hidden" name="post_id" value="{{ $post->id }}">
+                        <input type="hidden" class="edit-modal-hidden" name="post_id" value="">
                         <input type="submit" class="btn btn-primary d-block" value="編集">
                     </div>
                 </div>
