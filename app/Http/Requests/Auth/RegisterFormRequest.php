@@ -18,6 +18,15 @@ class RegisterFormRequest extends FormRequest
 
     protected $redirect = '/register';
 
+
+        // 20241027 add>>
+    public function prepareForValidation() : void
+    {
+        $input = $this->all();
+        $this->merge(['old_date' => $input['old_year'] . '-' . $input['old_month'] . '-' . $input['old_day']]);
+    }
+    // 20241027 add <<
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -36,6 +45,7 @@ class RegisterFormRequest extends FormRequest
             'old_year'=>'required|after:2000|before:2024',
             'old_month'=>'required',
             'old_day'=>'required',
+            'old_date'=>'date',
             // 'old_day'=>'required|after:1|before:31',
             'role' => 'required' ,
             'password'=>'required|between:8,30|same:password'
@@ -61,6 +71,7 @@ class RegisterFormRequest extends FormRequest
             'sex.required' => '必須項目です。',
             'old_year.after'=>'2000年以上を指定してください',
             'old_year.before'=>'2024年以下を指定してください',
+            'old_date.date' => '存在しない日付です',
             // 'old_day.after'=>'1日以上を指定してください',
             // 'old_day.before'=>'31日以下を指定してください',
             'role.required' => '必須項目です。',

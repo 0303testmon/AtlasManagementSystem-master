@@ -123,6 +123,9 @@
                 @if ($errors->first('old_month'))
                     <span class="error_message">{{ $errors->first('old_month') }}</span>
                 @endif
+                @if ($errors->first('old_date'))
+                    <span class="error_message">{{ $errors->first('old_date') }}</span>
+                @endif
                 <div class="mt-3">
                     <label class="d-block m-0 aa" style="font-size:13px">生年月日</label>
                     <div class="row">

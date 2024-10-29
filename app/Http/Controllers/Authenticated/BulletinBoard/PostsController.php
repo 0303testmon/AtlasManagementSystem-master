@@ -19,14 +19,25 @@ class PostsController extends Controller
     public function show(Request $request){
         $posts = Post::with('user', 'postComments')->get();
         $categories = MainCategory::get();
+         $subcategories = subCategory::get();
         $like = new Like;
         $post_comment = new Post;
-        if(!empty($request->keyword)){
+        // 20241027 add >>
+        // if(!empty($request->keyword)){
+        if(!empty($request->keyword) and !in_array($request->keyword, $subcategories->pluck("sub_category")->toArray())){
             $posts = Post::with('user', 'postComments')
             ->where('post_title', 'like', '%'.$request->keyword.'%')
             ->orWhere('post', 'like', '%'.$request->keyword.'%')->get();
-        }else if($request->category_word){
-            $sub_category = $request->category_word;
+                // 1029 add
+        // }else if($request->category_word){
+        //     $sub_category = $request->category_word;
+        }else if($request->category_word or in_array($request->keyword, $subcategories->pluck("sub_category")->toArray())){
+            if(in_array($request->keyword, $subcategories->pluck("sub_category")->toArray())){
+                $sub_category = $request->keyword;
+            }else{
+                // 1029 add
+                $sub_category = $request->category_word;
+            }
             // 1013 add
             // $posts = Post::with('user', 'postComments')->get();
                 $posts = Post::whereHas(
