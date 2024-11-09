@@ -97,14 +97,15 @@
                 <ul>
                     @foreach ($categories as $category)
                         <li class="main_categories" category_id="{{ $category->id }}"
-                            style="border-bottom: medium solid #808080">
+                            style="border-bottom: medium solid #C5C5C5">
+                            {{-- style="border-bottom: medium solid #808080"> --}}
                             <span class="main_categories_btn is-open" style="color: black"
                                 id="{{ $category->id }}">{{ $category->main_category }}<span class="inn"></span><span>
                         </li>
                         <div class="category_num{{ $category->id }} is-open">
                             @foreach ($category->subCategories as $sub_category)
                                 {{-- サブカテゴリから id と カテゴリ名称を取り出す --}}
-                                <li subcategory_id={{ $sub_category->id }} style="border-bottom: medium solid #808080">
+                                <li subcategory_id={{ $sub_category->id }} style="border-bottom: medium solid #C5C5C5; ">
                                     &emsp;<input type="submit" name="category_word" class="category_btn"
                                         value="{{ $sub_category->sub_category }}" form="postSearchRequest">
                                 </li>

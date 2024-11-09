@@ -239,8 +239,43 @@ li {
   cursor: pointer;
 }
 
-/* 1015add */
+/* 1109 add >> */
 .main_categories_btn {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #0000FF;
+  cursor: pointer;
+  position: relative;
+  /* 親要素にrelativeを追加 */
+  display: flex;
+  /* Flexboxを使用して配置 */
+  justify-content: space-between;
+  /* 左右にスペースを均等に */
+  align-items: center;
+  /* 垂直方向の中央揃え */
+}
+
+.inn {
+  position: relative;
+  /* 矢印の位置を相対的に設定 */
+}
+
+.inn:before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: 0;
+  /* 右寄せ */
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -60%) rotate(135deg);
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transition: 0.3s ease;
+}
+
+/* 1015add */
+/* .main_categories_btn {
   font-size: 12px;
   color: #0000FF;
   cursor: pointer;
@@ -266,7 +301,7 @@ li {
       transition: 0.3s ease;
     }
   }
-}
+} */
 
 .main_categories_btn.is-open {
   .inn {
