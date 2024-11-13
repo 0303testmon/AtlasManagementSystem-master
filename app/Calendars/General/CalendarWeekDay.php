@@ -52,7 +52,9 @@ class CalendarWeekDay{
     //  0908 add
      $toDay = $this->carbon->today()->format("Y-m-d");
      if($toDay >= $ymd){
-      $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="" disabled>受付終了</button>';
+      // 1112 add
+      $html[] = '<label  name="delete_date" style="font-size:12px" value="" disabled>受付終了</label>';
+      // $html[] = '<button type="submit" class="btn btn-danger p-0 w-75" name="delete_date" style="font-size:12px" value="" disabled>受付終了</button>';
       $html[] = '<input type="hidden" name="getPart[]" value="" form="reserveParts">';
      }else{
       $html[] = '<select name="getPart[]" class="border-primary" style="width:70px; border-radius:5px;" form="reserveParts">';

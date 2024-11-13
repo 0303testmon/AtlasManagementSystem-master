@@ -62,8 +62,14 @@
         </div>
         <div class="other_area border w-25">
             <div class="border m-4">
-                <div class="btn btn-info" style="margin:5px; width:100%"><a href="{{ route('post.input') }}"
-                        style="color: aliceblue">投稿</a></div>
+                {{-- 1015 add --}}
+                <div class="">
+                    <input class="btn btn-info" style="margin:5px; width:100% ;color:aliceblue; " type="submit"
+                        value="投稿"><a href="{{ route('post.input') }}"></a>
+                    </input>
+                </div>
+                {{-- <div class="btn btn-info" style="margin:5px; width:100%" ><a href="{{ route('post.input') }}"
+                        style="color: aliceblue">投稿</a></div> --}}
                 <div class="">
                     <input type="text" placeholder="キーワードを検索" name="keyword" form="postSearchRequest"
                         style="background-color: #E8F0F7; border-width:thin; height:35px; border-radius:5px">

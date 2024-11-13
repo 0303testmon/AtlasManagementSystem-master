@@ -1,12 +1,16 @@
 @extends('layouts.sidebar')
 
 @section('content')
-    <div class="vh-100 pt-5" style="background:#ECF1F6;">
-        <div class="border w-75 m-auto pt-5 pb-5" style="border-radius:5px; background:#FFF;">
-            <div class="w-75 m-auto border" style="border-radius:5px;">
+    <div class="w-75" style="margin:10% auto auto auto">
+        <div class="card">
+            <div class="w-100 card-body">
 
-                <p class="text-center">{{ $calendar->getTitle() }}</p>
-                <div class="">
+                {{-- <div class="vh-100 pt-5" style="background:#ECF1F6;">
+        <div class="border w-75 m-auto pt-5 pb-5" style="border-radius:5px; background:#FFF;">
+            <div class="w-75 m-auto border" style="border-radius:5px;"> --}}
+
+                <p class="text-center" style="border-top:none">{{ $calendar->getTitle() }}</p>
+                <div class="" style="border:0.05px solid #6c757d">
                     {!! $calendar->render() !!}
                     {{-- 0916 add --}}
                     {{-- <div class="adjust-table-btn m-auto text-right">

@@ -440,7 +440,13 @@ li {
 .table1 td,
 .table1 th {
   border: none;
+  padding: 10px;
   /* border: 1px solid #111; */
+}
+
+/* 偶数行の背景色変更 */
+.table1 tr:nth-child(2n) {
+  background: #fff;
 }
 
 .table1 tr:nth-child(2n+1) {
