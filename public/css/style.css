@@ -320,7 +320,7 @@ li {
 .reserve_users_area {
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
+  width: 900px;
   margin: 10px auto;
   height: 80vh;
   overflow: scroll;
@@ -334,8 +334,8 @@ li {
 }
 
 .one_person {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 .search_conditions span {
