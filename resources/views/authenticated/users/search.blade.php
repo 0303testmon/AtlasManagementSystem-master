@@ -83,9 +83,10 @@
                         <option value="DESC">降順</option>
                     </select>
                 </div>
-                <div class="" style="margin-top: 10px">
-                    <span class="m-0 search_conditions_btn"><span style="color: #6c757d;"><b
-                                style="font-size: 15px">検索条件の追加</b><span class="inn"></span></span></span>
+                <div class="" style="margin-top: 10px; ">
+                    <span class="m-0 search_conditions_btn" style="border-bottom: medium solid #C5C5C5"><span
+                            style="color: #6c757d;"><b style="font-size: 15px; ">検索条件の追加</b><span
+                                class="inn"></span></span></span>
                     <div class="search_conditions_inner">
                         <div>
                             <label style="color: #6c757d; margin-top:15px"><b>性別</b></label><br>

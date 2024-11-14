@@ -64,9 +64,14 @@
             <div class="border m-4">
                 {{-- 1015 add --}}
                 <div class="">
-                    <input class="btn btn-info" style="margin:5px; width:100% ;color:aliceblue; " type="submit"
+                    {{-- <input class="btn btn-info" style="margin:5px; width:100% ;color:aliceblue; " type="submit"
                         value="投稿"><a href="{{ route('post.input') }}"></a>
-                    </input>
+                    </input> --}}
+                    <a href="{{ route('post.input') }}" style="color: aliceblue">
+                        <div class="btn btn-info" style="margin:5px; width:100%">
+                            投稿
+                        </div>
+                    </a>
                 </div>
                 {{-- <div class="btn btn-info" style="margin:5px; width:100%" ><a href="{{ route('post.input') }}"
                         style="color: aliceblue">投稿</a></div> --}}
