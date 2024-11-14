@@ -41,8 +41,9 @@ class CalendarView{
         $toDay = $this->carbon->copy()->format("Y-m-d");
 
         if($startDay <= $day->everyDay() && $toDay >= $day->everyDay()){
-          // 0905 add
-          $html[] = '<td class="calendar-td day-blank">';
+          // 1114 add
+          // $html[] = '<td class="calendar-td day-blank">';
+          $html[] = '<td class="calendar-td day-blank '.$day->getClassName().'">';
           // $html[] = '<td class="calendar-td">';
         }else{
           $html[] = '<td class="calendar-td '.$day->getClassName().'">';

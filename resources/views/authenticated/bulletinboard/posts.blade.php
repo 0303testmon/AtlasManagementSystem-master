@@ -78,7 +78,7 @@
                 </div>
                 <input type="submit" name="like_posts" class="category_btn btn btn-pink"
                     style="background-color: #FEBAFF; color:aliceblue; margin:5px" value="いいねした投稿" form="postSearchRequest">
-                <input type="submit" name="my_posts" class="category_btn btn btn-warning" style="color:white"
+                <input type="submit" name="my_posts" class="category_btn btn btn-warning" style="color:white; width:115px;"
                     value="自分の投稿" form="postSearchRequest">
                 <!-- change 20242013 >> -->
 
@@ -98,8 +98,8 @@
                 @endforeach
                 </ul>  --}}
                 <!-- change 20242013 << -->
-                <lavel></lavel>
-                <label>カテゴリー検索</label>
+                <lavel></lavel><br>
+                <label style="margin-top:10px">カテゴリー検索</label>
                 <ul>
                     @foreach ($categories as $category)
                         <li class="main_categories" category_id="{{ $category->id }}"
@@ -108,10 +108,14 @@
                             <span class="main_categories_btn is-open" style="color: black"
                                 id="{{ $category->id }}">{{ $category->main_category }}<span class="inn"></span><span>
                         </li>
-                        <div class="category_num{{ $category->id }} is-open">
+                        <!-- 1114 add >> -->
+                        <!-- カテゴリ閉じる -->
+                        <!-- <div class="category_num{{ $category->id }} is-open"> -->
+                        <div class="category_num{{ $category->id }} is-open" style="display:none;">
+                            <!-- 20241114 change tks << -->
                             @foreach ($category->subCategories as $sub_category)
                                 {{-- サブカテゴリから id と カテゴリ名称を取り出す --}}
-                                <li subcategory_id={{ $sub_category->id }} style="border-bottom: medium solid #C5C5C5; ">
+                                <li subcategory_id="{{ $sub_category->id }}">
                                     &emsp;<input type="submit" name="category_word" class="category_btn"
                                         value="{{ $sub_category->sub_category }}" form="postSearchRequest">
                                 </li>
