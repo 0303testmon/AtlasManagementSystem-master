@@ -4,7 +4,8 @@ $(function () {
     $('.category_num' + category_id).slideToggle();
     // 20241016 change >>
     // is-openのクラスを付けたいhtmlタグを指定する
-    $("span.main_categories_btn").toggleClass('is-open');
+    // $("span.main_categories_btn").toggleClass('is-open');
+    $("#" + category_id).toggleClass('is-open');
     $(this).siblings('.category_num' + category_id).toggleClass('is-open');
     // $acpanel.hide().first().slideDown("easeOutExpo");
     // 20241016 change <<
