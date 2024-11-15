@@ -10,7 +10,7 @@
             <div class="w-75 m-auto border" style="border-radius:5px;"> --}}
 
                 <p class="text-center" style="border-top:none">{{ $calendar->getTitle() }}</p>
-                <div class="" style="border:0.05px solid #6c757d">
+                <div class="" style="border:0.05px solid #E7E7E7; border-top:none">
                     {!! $calendar->render() !!}
                     {{-- 0916 add --}}
                     {{-- <div class="adjust-table-btn m-auto text-right">

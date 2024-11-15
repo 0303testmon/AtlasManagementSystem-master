@@ -232,6 +232,7 @@ li {
   width: 50%;
   cursor: pointer;
   border-bottom: 1px solid black;
+  text-align: left;
   /* background: #999; */
   /* color: #FFF; */
 }
@@ -271,7 +272,8 @@ li {
   /* 右寄せ */
   width: 10px;
   height: 10px;
-  transform: translate(-50%, -60%) rotate(135deg);
+  /* transform: translate(-50%, -60%) rotate(135deg); */
+  transform: translate(-50%, -60%) rotate(-45deg);
   border-top: 1px solid #000;
   border-right: 1px solid #000;
   transition: 0.3s ease;
@@ -310,7 +312,8 @@ li {
   .inn {
     &:before {
       top: 80%;
-      transform: translate(-50%, -60%) rotate(-45deg);
+      /* transform: translate(-50%, -60%) rotate(-45deg); */
+      transform: translate(-50%, -60%) rotate(135deg);
       margin-left: 90px;
     }
   }
